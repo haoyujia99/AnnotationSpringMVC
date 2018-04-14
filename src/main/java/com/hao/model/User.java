@@ -1,9 +1,8 @@
 package com.hao.model;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.hao.util.CustomDateSerializer;
-
 import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 /**
  * com.hao.model
@@ -19,7 +18,7 @@ public class User {
     private int age;
     private String gender;
 
-    @JsonSerialize(using = CustomDateSerializer.class)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date birthday;
 
     public int getId() {
